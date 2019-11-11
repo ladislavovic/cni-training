@@ -133,7 +133,7 @@ public class ConfigurationExamples extends Examples {
 	 * you get the same instance. It is done by proxy.
 	 */
 	@Test
-	public void getDependencyByFactoryMehodCalling() { // TODO factory method - is it the correct name?
+	public void getDependencyByFactoryMehodCalling() {
 		runInSpring(ContextConfiguration5.class, ctx -> {
 			assertEquals(1, agent);
 			CommonBean bean1 = ctx.getBean("bean1", CommonBean.class);
