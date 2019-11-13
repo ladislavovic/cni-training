@@ -21,6 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 public class BasicExamples extends Examples {
 	
+	////////// example start //////////
 	@Configuration
 	public static class ContextConfiguration {
 		
@@ -41,7 +42,6 @@ public class BasicExamples extends Examples {
 		
 	}
 
-	////////// example start //////////
 	/**
 	 * Creates Spring Context and get a bean from it.
 	 */

@@ -1,4 +1,4 @@
-package com.cross_ni.training.hibernateintroduction.example01_columnMapping;
+package com.cross_ni.training.hibernateintroduction.common;
 
 import com.cross_ni.training.hibernateintroduction.model.Publisher;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -24,16 +24,12 @@ public class JPAContexConfiguration {
 	public DataSource dataSource() {
 		final DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.hsqldb.jdbcDriver");
-		dataSource.setUrl("jdbc:hsqldb:mem:" + dbName());
+		dataSource.setUrl("jdbc:hsqldb:mem:" + RandomStringUtils.randomAlphabetic(5));
 		dataSource.setUsername("SA");
 		dataSource.setPassword("");
 		return dataSource;
 	}
 	
-	public String dbName() {
-		return RandomStringUtils.randomAlphabetic(5);
-	}
-
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
@@ -58,6 +54,11 @@ public class JPAContexConfiguration {
 	@Bean
 	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
 		return new JpaTransactionManager(emf);
+	}
+	
+	@Bean
+	public DBService dbService() {
+		return new DBService();
 	}
 
 }

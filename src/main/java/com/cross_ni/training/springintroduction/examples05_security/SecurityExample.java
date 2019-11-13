@@ -21,8 +21,8 @@ import java.util.List;
 
 public class SecurityExample extends Examples {
 	
-	private static final String AUTH_READ = "READ";
-	private static final String AUTH_WRITE = "WRITR";
+	public static final String AUTH_READ = "READ";
+	public static final String AUTH_WRITE = "WRITE";
 	
 	@Configuration
 	@EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -74,7 +74,7 @@ public class SecurityExample extends Examples {
 			
 			authenticate(ctx, "admin", "admin"); // it is OK, it overrides previous call
 			myService.read();
-			myService.read();
+			myService.write();
 			
 			assertThrows(BadCredentialsException.class, () -> authenticate(ctx, "user", "wrongPassword"));
 			

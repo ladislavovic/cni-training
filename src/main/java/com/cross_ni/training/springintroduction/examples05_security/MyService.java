@@ -4,7 +4,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 public class MyService {
 
-	@PreAuthorize("hasAuthority('READ')")
+	@PreAuthorize("hasAuthority('" + SecurityExample.AUTH_READ + "')")
 	public void read() {
 		
 	}

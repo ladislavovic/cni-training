@@ -169,7 +169,7 @@ public class ConfigurationExamples extends Examples {
 	@Configuration
 	public static class ContextConfiguration8 {
 
-		@Bean
+//		@Bean
 		public CommonBean bean1() {
 			return new CommonBean("bean1_parent");
 		}
