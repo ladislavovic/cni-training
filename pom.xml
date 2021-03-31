@@ -25,7 +25,7 @@
         <hsqldb.version>2.4.0</hsqldb.version>
         <commons-lang.version>3.9</commons-lang.version>
         <jta.version>1.1</jta.version>
-        <guava.version>28.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <slf4j.version>1.7.21</slf4j.version>
     </properties>
 
